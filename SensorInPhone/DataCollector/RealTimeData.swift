@@ -128,7 +128,7 @@ class SensorData{
         resultSensorData.append(sensorValue)
         //Location
         resultSensorList.append("Location")
-        sensorValue = "(" + String(location.longitude.binade) + "," + String(location.latitude.binade) + ")"
+        sensorValue = "(" + String(location.longitude) + "," + String(location.latitude) + ")"
         resultSensorData.append(sensorValue)
         //Steps
         resultSensorList.append("Steps")
