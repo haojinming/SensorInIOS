@@ -14,4 +14,5 @@ Collect all sensor data in iOS, including:
 12. Steps/Pace/Distance
 13.Prsusure
 
+Refresh frequency of UI is 10HZ and frequence of data can be changed from 10HZ to 100HZ.
 This app can also work in background with CoreLocation module.
