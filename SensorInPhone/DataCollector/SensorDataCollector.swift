@@ -459,7 +459,7 @@ class SensorDataCollector: UIResponder, AVCaptureVideoDataOutputSampleBufferDele
             if self.cbCentralManager.isScanning{
                 cbCentralManager.stopScan()
             }
-            cbCentralManager.scanForPeripherals(withServices: [cbuuid], options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
+            cbCentralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
         case .poweredOff:
             self.realTimeData.sensorData.bleState = "PoweredOff"
         case .resetting:
