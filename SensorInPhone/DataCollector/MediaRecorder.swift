@@ -79,19 +79,17 @@ class MediaRecorder: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVA
         self.audioSession.requestRecordPermission { (granted) in
             if granted{
                 //not store audio file
-                let recordURL = URL.init(fileURLWithPath: "/dev/null")
-                /*
-                 //store audio file
-                 var recordURL = self.createAudioURL()
-                 if recordURL == nil{
-                 recordURL = self.getTempAudioFile()
-                 if recordURL == nil{
-                 recordURL = URL.init(fileURLWithPath: "/dev/null")
-                 }
-                 }*/
+                //let recordURL = URL.init(fileURLWithPath: "/dev/null")
+                
+                //store audio file
+                var recordURL = self.createAudioURL()
+                if recordURL == nil{
+                    recordURL = URL.init(fileURLWithPath: "/dev/null")
+                }
+                
                 do{
                     try self.audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: AVAudioSessionCategoryOptions.defaultToSpeaker)
-                    try self.audioRecorder = AVAudioRecorder(url: recordURL, settings: audioSetting)
+                    try self.audioRecorder = AVAudioRecorder(url: recordURL!, settings: audioSetting)
                     self.audioRecorder.delegate = self
                     self.audioRecorder.isMeteringEnabled = true
                     self.audioRecorder.prepareToRecord()
